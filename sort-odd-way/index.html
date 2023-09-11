@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorting the Odd way</title>
+</head>
+
+<body>
+  <script>
+    function sortItOut(array) {
+      let odd = [];
+      let even = [];
+      for (let i = 0; i < array.length; i++) {
+        if (Math.floor(array[i]) % 2 === 0) {
+          even.push(array[i]);
+        } else {
+          odd.push(array[i]);
+        }
+      }
+      let evenSorted = even.sort((a, b) => a - b).reverse();
+      let oddSorted = odd.sort((a, b) => a - b);
+
+      return oddSorted.concat(evenSorted);
+
+    }
+  </script>
+</body>
+
+</html>
